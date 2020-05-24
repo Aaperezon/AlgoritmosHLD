@@ -1,0 +1,66 @@
+struct node{
+    int l,r,minimum;
+};
+vector<node> SEG = vector(4n)
+vector<int> values = vector(n)
+
+privated void build(dir,l,r){ // start with dir=0,l=0,r=values.size()-1
+    SEG[dir].l=l;
+    SEG[dir].r=r;
+    if(l==r){
+        SEG[dir].minimum=values[l];     
+        return;
+    }
+    int mid =(l+r)/2;
+    build(dir*2+1,l,mid);
+    build(dri*2+2,mid+1,r);
+    SEG[dir].minimum=min(SEG[dir*2+1].minimum,SEG[dir*2+2].minimum);
+}
+
+template class<T>
+public segmentTree (type aggregationType, const vector<T> & values){
+    this->values=values;
+    build(0,0,values.size()-1);
+}
+
+
+privated int getMinimum(dir,l,r){
+    //getMinimum(3,5) [dir].l -> 6
+    //              [dir].r -> 8 
+    //SEG[dir].l -> 1
+    //SEG[dir].r -> 2 
+    getMinimum(0,3)
+    if(SEG[dir].l>r || SEG[dir].r < l)
+        return INT_MAX;
+    if(l<=SEG[dir].l&&SEG[dir].r<=r)
+        return SEG[dir].minimum;
+    return min(
+        getMinimum(dir*2+1,l,r),
+        getMinimum(dir*2+2,l,r)
+    );
+}
+
+private void updatePos(dir,pos,newValue){
+    if(SEG[dir].l==SEG[dir].r){
+        SEG[dir].minimum=values[pos]=newValue;
+        return;
+    }
+    if(pos<=SEG[dir*2+1].r)
+        updatePos(dir*2+1,pos,newValue);
+    else
+        updatePos(dir*2+2,pos,newValue);
+    SEG[dir].minimum=min(SEG[dir*2+1].minimum,SEG[dir*2+2].minimum);
+}
+public void updatePos(pos,newValue){
+    return updatePos(0,pos,newValue);
+}
+
+
+class segmentTree{...}
+
+segmentTree segmentTreeInstance = segmentTree<int>(type.minimum,{1,3,5,1,30});
+
+segmentTree.getMinimum(3,5);
+segmentTree.updatePos(2,5);
+segmentTree.getMinimum(3,7);
+

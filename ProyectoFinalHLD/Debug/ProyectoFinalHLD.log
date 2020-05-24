@@ -1,0 +1,5 @@
+﻿  ProyectoFinalHLD.cpp
+  SegmentTree.cpp
+  Generando código...
+C:\Users\AaronPerezOntiveros\Documents\4toSemestre\Algoritmos\ProyectoFinalHLD\ProyectoFinalHLD\SegmentTree.cpp(25): warning C4715: 'SegmentTree::Build': no todas las rutas de acceso de control devuelven un valor
+  ProyectoFinalHLD.vcxproj -> C:\Users\AaronPerezOntiveros\Documents\4toSemestre\Algoritmos\ProyectoFinalHLD\Debug\ProyectoFinalHLD.exe
