@@ -9,13 +9,19 @@
 using namespace std;
 int main()
 {
-	const vector<int> values = { 5,-2,10,1 };
-	SegmentTree s(values);
+    
+	vector<int> values = { 5, -2 , 10 , 1 };
+	//SegmentTree s(values); 
+	SegmentTree s = SegmentTree(values , 
+		[](int a, int b) -> int {return max(a, b); });
+
+	
 	cout << s.GetMinimum(0, values.size()-1) << '\n';
 	s.UpdatePos(0,100);
 	cout << s.GetMinimum(0, values.size()-1) << '\n';
 	s.UpdatePos(0, -100);
 	cout << s.GetMinimum(0, values.size() - 1) << '\n';
+    
 
-
+   
 }
